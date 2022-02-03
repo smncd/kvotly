@@ -6,9 +6,9 @@
   "author": "",
   "license": "BSD-3-Clause",
   "scripts": {
-    "dev": "concurrently 'tsc --watch' 'onchange \"**/*\" --exclude-path .gitignore -- prettier --write --ignore-unknown {{changed}}'",
+    "dev": "concurrently 'tsc --watch' 'nodemon build/main.js' 'onchange \"**/*\" --exclude-path .gitignore -- prettier --write --ignore-unknown {{changed}}'",
     "build": "tsc",
-    "start": "ts-node build/main.js"
+    "start": "node build/main.js"
   },
   "repository": {
     "type": "git",
@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/twentyonepenguins/kvotly#readme",
   "dependencies": {
+    "dotenv": "^16.0.0",
     "telegraf": "^4.6.0",
-    "ts-node": "^10.4.0",
     "typescript": "^4.5.5"
   },
   "devDependencies": {
