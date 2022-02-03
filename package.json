@@ -6,8 +6,9 @@
   "author": "",
   "license": "BSD-3-Clause",
   "scripts": {
-    "dev": "concurrently 'nodemon --watch \"src/**/*.ts\" --ignore \"node_modules\" --exec \"ts-node\" src/main.ts' 'onchange \"**/*\" --exclude-path .gitignore -- prettier --write --ignore-unknown {{changed}}'",
-    "start": "ts-node src/main.ts"
+    "dev": "concurrently 'tsc --watch' 'onchange \"**/*\" --exclude-path .gitignore -- prettier --write --ignore-unknown {{changed}}'",
+    "build": "tsc",
+    "start": "ts-node build/main.js"
   },
   "repository": {
     "type": "git",
