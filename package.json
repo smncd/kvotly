@@ -2,12 +2,12 @@
   "name": "kvotly",
   "version": "1.0.0",
   "description": "",
-  "main": "main.ts",
+  "main": "src/main.ts",
   "author": "",
   "license": "BSD-3-Clause",
   "scripts": {
-    "dev": "concurrently 'nodemon --watch \"**/*.ts\" --ignore \"node_modules\" --exec \"ts-node\" main.ts' 'onchange \"**/*\" --exclude-path .gitignore -- prettier --write --ignore-unknown {{changed}}'",
-    "start": "ts-node main.ts"
+    "dev": "concurrently 'nodemon --watch \"src/**/*.ts\" --ignore \"node_modules\" --exec \"ts-node\" src/main.ts' 'onchange \"**/*\" --exclude-path .gitignore -- prettier --write --ignore-unknown {{changed}}'",
+    "start": "ts-node src/main.ts"
   },
   "repository": {
     "type": "git",
