@@ -6,6 +6,7 @@
   "author": "",
   "license": "BSD-3-Clause",
   "scripts": {
+    "dev": "concurrently 'nodemon --watch \"**/*.ts\" --ignore \"node_modules\" --exec \"ts-node\" main.ts' 'onchange \"**/*\" --exclude-path .gitignore -- prettier --write --ignore-unknown {{changed}}'",
     "start": "ts-node main.ts"
   },
   "repository": {
@@ -17,7 +18,14 @@
   },
   "homepage": "https://github.com/twentyonepenguins/kvotly#readme",
   "dependencies": {
+    "telegraf": "^4.6.0",
     "ts-node": "^10.4.0",
     "typescript": "^4.5.5"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.15",
+    "onchange": "^7.1.0",
+    "prettier": "^2.5.1"
   }
 }
